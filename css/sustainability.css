@@ -5,13 +5,11 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Montserrat", sans-serif;
   color: #333;
   line-height: 1.6;
 }
-
 .navbar {
   position: fixed;
   top: 0;
@@ -32,20 +30,18 @@ body {
 .navbar a:hover {
   color: #449962;
 }
-
 .hero {
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-image: url("https://images.pexels.com/photos/2886937/pexels-photo-2886937.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-image: url("https://www.abmasfarm.com/wp-content/uploads/bb-plugin/cache/Abma-2-scaled-panorama-382dba3554d52ebea7206327bfabd56e-5e56947806ab7.jpg");
   background-size: cover;
   background-position: center;
   color: white;
   text-align: center;
+  position: relative;
 }
-
 .hero::before {
   content: "";
   position: absolute;
@@ -53,12 +49,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.3),
-    rgba(0, 0, 0, 0.6)
-  );
+  background: rgba(0, 0, 0, 0.6);
   z-index: 1;
 }
 .hero-content {
@@ -67,62 +58,31 @@ body {
 }
 .hero h1 {
   font-size: 3.5rem;
-  margin-bottom: 10px;
 }
-.hero p {
-  font-size: 1.25rem;
-}
-.hero button {
-  padding: 10px 25px;
-  background-color: #449962;
-  color: white;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-top: 20px;
-}
-.hero button:hover {
-  background-color: #66b07a;
-}
-
 .section {
-  padding: 80px 50px;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  align-items: center;
+  justify-content: center;
+}
+.section:nth-child(even) {
+  flex-direction: row-reverse;
 }
 .section h2 {
   font-size: 2.5rem;
   color: #449962;
   margin-bottom: 20px;
-}
-.section p {
-  max-width: 800px;
-  margin: 0 auto;
-  font-size: 1.1rem;
-  color: #555;
-}
-
-.sustainability {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-top: 40px;
-}
-.sustainability div {
-  flex: 1;
-  min-width: 250px;
-  margin: 20px;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #f9f9f9;
-}
-.sustainability div h3 {
-  color: #449962;
-}
-
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
   text-align: center;
+}
+.section-content,
+.section-image {
+  flex: 1;
+  max-width: 500px;
+  text-align: center;
+}
+.section-image img {
+  width: 100%;
+  border-radius: 8px;
+  margin: 0 auto;
 }
