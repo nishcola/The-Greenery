@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Greenery - Order</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+          <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <span class="fs-4">The Greenery</span>
+          </a>
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="order.html" class="nav-link active bg-success" aria-current="page" style="margin-right: 10px;">Order</a></li>
+            <li class="nav-item"><a href="menu.html" class="nav-link text-dark">Menu</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link text-dark">Contact</a></li>
+            <li class="nav-item"><a href="process.html" class="nav-link text-dark">Process</a></li>
+            <li class="nav-item"><a href="sources.html" class="nav-link text-dark">References</a></li>
+          </ul>
+        </header>
+    </div>
+    <main class="container my-5">
+        <h1 class="text-center mb-4">Order Online</h1>
+        <p class="text-center lead mb-5">Select your items below. Note: This is a demonstration and does not process real orders.</p>
+
+        <form id="mockOrderForm">
+            <div class="row g-4"> <!-- Added gutter spacing -->
+                <!-- Menu Items Column -->
+                <div class="col-md-7">
+                    <h2 class="mb-3">Choose Your Items</h2>
+
+                    <!-- Appetizers Section -->
+                    <h3 class="text-success border-bottom pb-1 mb-3">Appetizers</h3>
+                    <!-- Crispy Spring Rolls -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/Spring-Roll-Recipe.jpg" class="img-fluid rounded-start" alt="Crispy Spring Rolls" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Crispy Spring Rolls</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Vegetable-filled, sweet chili sauce.</p>
+                                            <span class="fw-bold">$8.50</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-spring-rolls" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-spring-rolls" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="8.50" data-name="Crispy Spring Rolls">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Avocado Toast Bites -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/avocado-toast-bites.jpg" class="img-fluid rounded-start" alt="Avocado Toast Bites" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Avocado Toast Bites</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Smashed avocado, sourdough, chili flakes, microgreens.</p>
+                                            <span class="fw-bold">$9.50</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-avocado-toast" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-avocado-toast" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="9.50" data-name="Avocado Toast Bites">
+                                        </div>
+                                    </div>
+                                    <div class="mt-1 small">
+                                         <div class="form-check form-check-inline">
+                                             <input class="form-check-input" type="checkbox" id="avocado-gf" value="1.00" data-parent-id="qty-avocado-toast">
+                                             <label class="form-check-label" for="avocado-gf">Use GF Bread (+$1.00)</label>
+                                         </div>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Hummus Platter -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/hummus-trio-I-howsweeteats.com-10-500x500.jpg" class="img-fluid rounded-start" alt="Hummus Platter" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Hummus Platter</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">House-made hummus, pita, veggie sticks.</p>
+                                            <span class="fw-bold">$10.00</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-hummus" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-hummus" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="10.00" data-name="Hummus Platter">
+                                        </div>
+                                    </div>
+                                     <div class="mt-1 small">
+                                         <div class="form-check form-check-inline">
+                                             <input class="form-check-input" type="checkbox" id="hummus-gf" value="1.00" data-parent-id="qty-hummus">
+                                             <label class="form-check-label" for="hummus-gf">Sub GF Crackers (+$1.00)</label>
+                                         </div>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Courses Section -->
+                     <h3 class="text-success border-bottom pb-1 mt-4 mb-3">Main Courses</h3>
+                    <!-- Buddha Bowl -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/tofu-buddha-bowls-peanut-sauce-8-1.jpg" class="img-fluid rounded-start" alt="Buddha Bowl" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Buddha Bowl</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Quinoa, sweet potato, chickpeas, kale, avo, tofu, tahini dressing.</p>
+                                            <span class="fw-bold">$15.50</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-buddha" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-buddha" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="15.50" data-name="Buddha Bowl">
+                                        </div>
+                                    </div>
+                                     <div class="mt-1 small">
+                                         <label class="form-check-label me-2 fw-semibold">Options:</label>
+                                         <div class="form-check form-check-inline">
+                                             <input class="form-check-input" type="checkbox" id="buddha-extra-avo" value="2.00" data-parent-id="qty-buddha">
+                                             <label class="form-check-label" for="buddha-extra-avo">Extra Avocado (+$2.00)</label>
+                                         </div>
+                                          <div class="form-check form-check-inline">
+                                             <input class="form-check-input" type="checkbox" id="buddha-no-tofu" value="0" data-parent-id="qty-buddha">
+                                             <label class="form-check-label" for="buddha-no-tofu">Sub Extra Chickpeas for Tofu</label>
+                                         </div>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Beyond Burger Deluxe -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/beyond-burger-nutrition-and-ingredients-1569351590.jpg" class="img-fluid rounded-start" alt="Beyond Burger Deluxe" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Beyond Burger Deluxe</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Beyond patty, vegan cheese, veggies, special sauce, brioche bun, fries.</p>
+                                            <span class="fw-bold">$16.50</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-burger" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-burger" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="16.50" data-name="Beyond Burger Deluxe">
+                                        </div>
+                                    </div>
+                                     <div class="mt-1 small">
+                                         <label class="form-check-label me-2 fw-semibold">Side:</label>
+                                         <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="burgerSide" id="burger-fries" value="0" checked data-parent-id="qty-burger">
+                                              <label class="form-check-label" for="burger-fries">Fries</label>
+                                         </div>
+                                          <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="burgerSide" id="burger-salad" value="1.50" data-parent-id="qty-burger">
+                                              <label class="form-check-label" for="burger-salad">Side Salad (+$1.50)</label>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Lentil Shepherd's Pie -->
+                     <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/Lentil-Shepherds-Pie-Featured.jpg" class="img-fluid rounded-start" alt="Lentil Shepherd's Pie" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Lentil Shepherd's Pie</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Hearty lentil-veg stew, creamy mashed potato crust. (GF, NF, SF)</p>
+                                            <span class="fw-bold">$17.00</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-shepherds-pie" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-shepherds-pie" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="17.00" data-name="Lentil Shepherd's Pie">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Spicy Peanut Noodles -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/Peanut-Noodles.jpg" class="img-fluid rounded-start" alt="Spicy Peanut Noodles" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Spicy Peanut Noodles</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Rice noodles, spicy peanut sauce, tofu, broccoli, carrots.</p>
+                                            <span class="fw-bold">$16.00</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-peanut-noodles" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-peanut-noodles" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="16.00" data-name="Spicy Peanut Noodles">
+                                        </div>
+                                    </div>
+                                    <div class="mt-1 small">
+                                         <div class="form-check form-check-inline">
+                                             <input class="form-check-input" type="checkbox" id="noodles-gf" value="1.00" data-parent-id="qty-peanut-noodles">
+                                             <label class="form-check-label" for="noodles-gf">Use GF Tamari (+$1.00)</label>
+                                         </div>
+                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Desserts Section -->
+                     <h3 class="text-success border-bottom pb-1 mt-4 mb-3">Desserts</h3>
+                     <!-- Chocolate Avocado Mousse -->
+                     <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/Avocado-Chocolate-Mousse-Vegan-and-Low-Carb.jpg" class="img-fluid rounded-start" alt="Chocolate Avocado Mousse" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Chocolate Avocado Mousse</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Rich chocolate, avocado base, berries. (GF, NF)</p>
+                                            <span class="fw-bold">$7.50</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-choc-mousse" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-choc-mousse" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="7.50" data-name="Chocolate Avocado Mousse">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Cashew Berry Cheesecake -->
+                     <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/vegan-blueberry-cheesecake-4.jpg" class="img-fluid rounded-start" alt="Cashew Berry Cheesecake" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Cashew Berry Cheesecake</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Cashew-based, nut crust, berry swirl. (Contains Nuts)</p>
+                                            <span class="fw-bold">$8.50</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-cheesecake" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-cheesecake" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="8.50" data-name="Cashew Berry Cheesecake">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Warm Apple Crumble -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/apple-crisp-with-ice-cream-and-caramel.jpg" class="img-fluid rounded-start" alt="Warm Apple Crumble" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Warm Apple Crumble</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Spiced apples, oat topping, served w/ vegan ice cream.</p>
+                                            <span class="fw-bold">$8.00</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-apple-crumble" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-apple-crumble" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="8.00" data-name="Warm Apple Crumble">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drinks Section -->
+                     <h3 class="text-success border-bottom pb-1 mt-4 mb-3">Drinks</h3>
+                     <!-- Freshly Squeezed OJ -->
+                     <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                             <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/orange-juice-1296x728-feature.jpg" class="img-fluid rounded-start" alt="Fresh Orange Juice" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Freshly Squeezed OJ</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">100% pure orange juice.</p>
+                                            <span class="fw-bold">$5.00</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-oj" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-oj" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="5.00" data-name="Freshly Squeezed OJ">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Green Vitality Smoothie -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                             <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/VERTICAL-IMAGE-Vitality-Smoothie-20-copy.jpg" class="img-fluid rounded-start" alt="Green Smoothie" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Green Vitality Smoothie</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Spinach, kale, banana, mango, almond milk, chia.</p>
+                                            <span class="fw-bold">$7.00</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-green-smoothie" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-green-smoothie" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="7.00" data-name="Green Vitality Smoothie">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Local Kombucha -->
+                    <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/How-to-make-your-own-kombucha-2-1400x788-.jpg" class="img-fluid rounded-start" alt="Kombucha Bottle" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Local Kombucha</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Fermented tea drink.</p>
+                                            <span class="fw-bold">$6.00</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-kombucha" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-kombucha" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="6.00" data-name="Local Kombucha">
+                                        </div>
+                                    </div>
+                                    <div class="mt-1 small">
+                                         <label class="form-check-label me-2 fw-semibold">Flavor:</label>
+                                         <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="kombuchaFlavor" id="kombucha-ginger" value="0" checked data-parent-id="qty-kombucha">
+                                              <label class="form-check-label" for="kombucha-ginger">Ginger-Lemon</label>
+                                         </div>
+                                          <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="kombuchaFlavor" id="kombucha-raspberry" value="0" data-parent-id="qty-kombucha">
+                                              <label class="form-check-label" for="kombucha-raspberry">Raspberry</label>
+                                         </div>
+                                         <!-- Add more flavors if needed -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Organic Fair-Trade Coffee -->
+                     <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/tips-to-recognize-good-quality-coffee-424970.jpg" class="img-fluid rounded-start" alt="Cup of Coffee" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Organic Coffee</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Fair-trade, regular or decaf.</p>
+                                            <span class="fw-bold">$3.50</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-coffee" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-coffee" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="3.50" data-name="Organic Coffee">
+                                        </div>
+                                    </div>
+                                     <div class="mt-1 small">
+                                         <label class="form-check-label me-2 fw-semibold">Milk:</label>
+                                         <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="coffeeMilk" id="coffee-oat" value="0" checked data-parent-id="qty-coffee">
+                                              <label class="form-check-label" for="coffee-oat">Oat</label>
+                                         </div>
+                                          <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="coffeeMilk" id="coffee-soy" value="0" data-parent-id="qty-coffee">
+                                              <label class="form-check-label" for="coffee-soy">Soy</label>
+                                         </div>
+                                          <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="coffeeMilk" id="coffee-almond" value="0" data-parent-id="qty-coffee">
+                                              <label class="form-check-label" for="coffee-almond">Almond</label>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Herbal Tea Selection -->
+                     <div class="card mb-3 shadow-sm">
+                        <div class="row g-0">
+                            <div class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2">
+                                <img src="media/Herbal_Tea_Chamomile.jpg" class="img-fluid rounded-start" alt="Cup of Tea" style="max-height: 80px; width: auto;">
+                            </div>
+                            <div class="col-9 col-sm-10">
+                                <div class="card-body py-2 px-3">
+                                    <div class="d-flex justify-content-between align-items-start mb-1">
+                                        <div>
+                                            <h5 class="card-title mb-0">Herbal Tea</h5>
+                                            <p class="card-text text-muted small d-none d-md-block">Selection of herbal infusions.</p>
+                                            <span class="fw-bold">$3.00</span>
+                                        </div>
+                                        <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                                            <label for="qty-herbal-tea" class="visually-hidden">Quantity</label>
+                                            <input type="number" id="qty-herbal-tea" class="form-control form-control-sm" value="0" min="0" max="10" style="width: 65px;" data-price="3.00" data-name="Herbal Tea">
+                                        </div>
+                                    </div>
+                                     <div class="mt-1 small">
+                                         <label class="form-check-label me-2 fw-semibold">Type:</label>
+                                         <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="teaFlavor" id="tea-peppermint" value="0" checked data-parent-id="qty-herbal-tea">
+                                              <label class="form-check-label" for="tea-peppermint">Peppermint</label>
+                                         </div>
+                                          <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="teaFlavor" id="tea-chamomile" value="0" data-parent-id="qty-herbal-tea">
+                                              <label class="form-check-label" for="tea-chamomile">Chamomile</label>
+                                         </div>
+                                          <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="teaFlavor" id="tea-ginger" value="0" data-parent-id="qty-herbal-tea">
+                                              <label class="form-check-label" for="tea-ginger">Ginger Lemon</label>
+                                         </div>
+                                          <div class="form-check form-check-inline">
+                                              <input class="form-check-input" type="radio" name="teaFlavor" id="tea-green" value="0" data-parent-id="qty-herbal-tea">
+                                              <label class="form-check-label" for="tea-green">Green Tea</label>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- End Menu Items Column -->
+
+                <!-- Order Summary & Details Column -->
+                <div class="col-md-5">
+                    <div class="sticky-top" style="top: 80px;"> <!-- Add sticky-top for summary -->
+                        <h2 class="mb-3">Your Order</h2>
+                        <div class="card bg-light mb-4 shadow-sm">
+                             <div class="card-body">
+                                <h5 class="card-title mb-3">Summary</h5>
+                                <ul id="cart-items" class="list-unstyled mb-3" style="max-height: 300px; overflow-y: auto;"> <!-- Added scroll for long orders -->
+                                    <li class="text-muted">Select items to add them here.</li>
+                                </ul>
+                                <hr>
+                                <p class="d-flex justify-content-between">
+                                    <span>Subtotal:</span>
+                                    <span id="cart-subtotal">$0.00</span>
+                                </p>
+                                 <p class="d-flex justify-content-between">
+                                    <span>Tax (6% Est):</span>
+                                    <span id="cart-tax">$0.00</span>
+                                </p>
+                                 <p class="d-flex justify-content-between fw-bold fs-5 border-top pt-2">
+                                    <span>Total:</span>
+                                    <span id="cart-total">$0.00</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <h2 class="mb-3">Details</h2>
+                         <!-- Pickup/Delivery Choice -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Order Type:</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="orderType" id="orderPickup" value="pickup" checked>
+                                    <label class="form-check-label" for="orderPickup">Pickup</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="orderType" id="orderDelivery" value="delivery">
+                                    <label class="form-check-label" for="orderDelivery">Delivery</label>
+                                </div>
+                            </div>
+                             <small class="text-muted" id="deliveryNotice" style="display: none;">Delivery fee may apply (not calculated in total).</small>
+                        </div>
+
+                         <!-- Name/Phone/Email -->
+                         <div class="mb-3">
+                             <label for="customerName" class="form-label">Name <span class="text-danger">*</span></label>
+                             <input type="text" class="form-control" id="customerName" required>
+                        </div>
+                         <div class="mb-3">
+                             <label for="customerPhone" class="form-label">Phone <span class="text-danger">*</span></label>
+                             <input type="tel" class="form-control" id="customerPhone" required>
+                        </div>
+                         <div class="mb-3">
+                             <label for="customerEmail" class="form-label">Email</label>
+                             <input type="email" class="form-control" id="customerEmail">
+                        </div>
+
+                         <!-- Delivery Address (Conditional) -->
+                         <div class="mb-3" id="deliveryAddressGroup" style="display: none;"> <!-- Start hidden -->
+                             <label for="deliveryAddress" class="form-label">Delivery Address <span class="text-danger">*</span></label>
+                             <textarea class="form-control" id="deliveryAddress" rows="3"></textarea> <!-- Required attribute handled by JS -->
+                         </div>
+
+                        <!-- Special Instructions -->
+                        <div class="mb-3">
+                            <label for="specialInstructions" class="form-label">Special Instructions</label>
+                            <textarea class="form-control" id="specialInstructions" rows="2" placeholder="e.g., Allergies (Peanut), no onions, leave at door..."></textarea>
+                        </div>
+
+                         <!-- Alert & Button -->
+                        <div class="alert alert-warning" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>Mock Order: Clicking 'Place Order' will not process payment or send order details.
+                        </div>
+                        <button type="submit" class="btn btn-success w-100 btn-lg">Place Order</button>
+                    </div> <!-- End sticky-top -->
+                </div> <!-- End Summary Column -->
+            </div> <!-- End Row -->
+        </form>
+    </main>
+    <footer class="bg-light text-center text-lg-start mt-auto">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">The Greenery</h5>
+            <p>
+              Deliciously compassionate food. Locally sourced, thoughtfully
+              prepared.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+            <ul class="list-unstyled mb-0">
+              <li><a href="menu.html" class="text-dark">Menu</a></li>
+              <li><a href="process.html" class="text-dark">Our Impact</a></li>
+              <li><a href="contact.html" class="text-dark">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Follow Us</h5>
+            <a href="#" class="text-dark me-2"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-dark me-2"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="text-dark"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.1)">
+        © 2025 The Greenery -
+        <a class="text-dark" href="sources.html">References</a> | Team 2009-902
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Greenery - Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+          <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <span class="fs-4">The Greenery</span>
+          </a>
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="order.html" class="nav-link text-dark">Order</a></li>
+            <li class="nav-item"><a href="menu.html" class="nav-link text-dark" style="margin-right: 10px;">Menu</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link active bg-success" aria-current="page" style="margin-right: 10px;">Contact</a></li>
+            <li class="nav-item"><a href="process.html" class="nav-link text-dark">Process</a></li>
+            <li class="nav-item"><a href="sources.html" class="nav-link text-dark">References</a></li>
+          </ul>
+        </header>
+    </div>
+    <main class="container my-5">
+        <h1 class="text-center mb-4">Contact Us</h1>
+        <p class="text-center lead mb-5">We'd love to hear from you! Reach out with questions, feedback, reservation inquiries, or just to say hello.</p>
+
+        <div class="row g-4"> <!-- Added gutter spacing -->
+           <div class="col-lg-6 mb-4">
+               <div class="p-4 bg-light rounded shadow-sm h-100"> <!-- Added padding and background -->
+                   <h2 class="text-success mb-3">Get in Touch</h2>
+                   <p><i class="bi bi-geo-alt-fill me-2 text-success"></i><strong>Address:</strong><br> 777 Water Wheel Drive,<br> Champion, PA 15622</p>
+                   <p><i class="bi bi-telephone-fill me-2 text-success"></i><strong>Phone:</strong><br> <a href="tel:+15551234567">(123) 456-7890</a> (Call for reservations of 4+)</p>
+                   <p><i class="bi bi-envelope-fill me-2 text-success"></i><strong>Email:</strong><br> <a href="mailto:info@greenleafvegan.example">info@thegreenery.com</a></p>
+
+                   <h3 class="mt-4">Hours</h3>
+                   <ul class="list-unstyled">
+                       <li><strong>Monday - Friday:</strong> 11:00 AM - 9:00 PM</li>
+                       <li><strong>Saturday:</strong> 10:00 AM - 10:00 PM</li>
+                       <li><strong>Sunday:</strong> 10:00 AM - 8:00 PM (Brunch 10 AM - 2 PM)</li>
+                   </ul>
+
+                   <!-- Embedded Map -->
+                    <div class="mt-4">
+                       <h4 class="mb-2">Find Us</h4>
+                       <!-- IMPORTANT: Replace this iframe with your actual Google Maps Embed Code -->
+                       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3055.3492646397085!2d-79.3002781236128!3d40.02298087950966!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89cad17abd9a35e5%3A0xe64df0643e194e61!2sSeven%20Springs%20Mountain%20Resort!5e0!3m2!1sen!2sus!4v1743953008096!5m2!1sen!2sus" width="100%" height="300" style="border:0; border-radius: 0.25rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="shadow-sm"></iframe>
+                        <small class="d-block mt-1 text-muted">777 Water Wheel Dr, Champion, PA</small>
+                        <a href="https://maps.app.goo.gl/nyYJ1HmcJfaCLYSQ8" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-secondary mt-2">View on Google Maps</a>
+                   </div>
+
+                    <!-- Social Media Links -->
+                    <div class="mt-4">
+                        <h4 class="mb-2">Follow Us</h4>
+                         <a href="#" class="btn btn-outline-primary btn-lg me-2" title="Facebook"><i class="bi bi-facebook"></i></a>
+                         <a href="#" class="btn btn-outline-danger btn-lg me-2" title="Instagram"><i class="bi bi-instagram"></i></a>
+                         <a href="#" class="btn btn-outline-dark btn-lg" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+               </div>
+           </div>
+            <div class="col-lg-6 mb-4">
+                <div class="p-4 bg-light rounded shadow-sm h-100"> <!-- Added padding and background -->
+                   <h2 class="text-success mb-3">Send Us a Message</h2>
+                   <form id="mockContactForm">
+                        <div class="mb-3">
+                           <label for="contactName" class="form-label">Your Name <span class="text-danger">*</span></label>
+                           <input type="text" class="form-control" id="contactName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Your Email <span class="text-danger">*</span></label>
+                           <input type="email" class="form-control" id="contactEmail" required>
+                        </div>
+                        <div class="mb-3">
+                           <label for="contactSubject" class="form-label">Subject</label>
+                           <input type="text" class="form-control" id="contactSubject" placeholder="e.g., Reservation Inquiry, Feedback">
+                       </div>
+                        <div class="mb-3">
+                           <label for="contactMessage" class="form-label">Message <span class="text-danger">*</span></label>
+                           <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                        </div>
+                        <div class="alert alert-info" role="alert">
+                            <i class="bi bi-info-circle-fill me-2"></i>This is a mock form: Clicking 'Send Message' will show an alert but not actually send an email.
+                        </div>
+                        <button type="submit" class="btn btn-success"><i class="bi bi-send-fill me-2"></i>Send Message</button>
+                   </form>
+
+                   <!-- FAQ Section -->
+                    <div class="mt-5">
+                        <h2 class="text-success mb-3">Frequently Asked Questions</h2>
+                        <div class="accordion" id="faqAccordion">
+                             <div class="accordion-item">
+                               <h2 class="accordion-header" id="headingOne">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                   Do you take reservations?
+                                 </button>
+                               </h2>
+                               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                 <div class="accordion-body">
+                                   Yes, we accept reservations for parties of 4 or more. Please call us during business hours at <a href="tel:+11234567890">(123) 456-7890</a> to book your table. For smaller parties or walk-ins, we operate on a first-come, first-served basis, but feel free to call ahead to check wait times.
+                                 </div>
+                               </div>
+                             </div>
+                             <div class="accordion-item">
+                               <h2 class="accordion-header" id="headingTwo">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                   Is parking available nearby?
+                                 </button>
+                               </h2>
+                               <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                 <div class="accordion-body">
+                                   There is metered street parking available on Plantain Place and surrounding streets (check signs for hours/restrictions). There is also a public parking garage located two blocks east on Veggie Ave, near the corner of Bean St.
+                                 </div>
+                               </div>
+                             </div>
+                             <div class="accordion-item">
+                               <h2 class="accordion-header" id="headingThree">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    How do you handle allergies?
+                                 </button>
+                               </h2>
+                               <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                 <div class="accordion-body">
+                                   Your health and safety are important to us! Please inform your server of any allergies or dietary restrictions <strong>immediately</strong> upon ordering. While our kitchen is 100% vegan, we do handle common allergens like nuts, soy, gluten, and sesame. We have procedures to minimize cross-contamination, but cannot guarantee zero risk for severe allergies. Check our <a href="menu.html">menu</a> for item-specific icons (GF, NF, SF options) and use the "Special Instructions" field when <a href="order.html">ordering online</a>. Don't hesitate to ask staff for clarification.
+                                 </div>
+                               </div>
+                             </div>
+                             <div class="accordion-item">
+                               <h2 class="accordion-header" id="headingFour">
+                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    Do you offer catering?
+                                 </button>
+                               </h2>
+                               <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                 <div class="accordion-body">
+                                   Yes, we offer catering services for events of various sizes! Please contact us via email at <a href="mailto:catering@thegreenery.com">catering@thegreenery.com</a> or use the contact form above with details about your event (date, number of guests, type of service needed), and we'll get back to you with options and pricing.
+                                 </div>
+                               </div>
+                             </div>
+                           </div>
+                    </div>
+               </div>
+           </div>
+        </div>
+   </main>
+    <footer class="bg-light text-center text-lg-start mt-auto">
+      <div class="container p-4">
+        <div class="row">
+          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase">The Greenery</h5>
+            <p>
+              Deliciously compassionate food. Locally sourced, thoughtfully
+              prepared.
+            </p>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Links</h5>
+            <ul class="list-unstyled mb-0">
+              <li><a href="menu.html" class="text-dark">Menu</a></li>
+              <li><a href="process.html" class="text-dark">Our Impact</a></li>
+              <li><a href="contact.html" class="text-dark">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Follow Us</h5>
+            <a href="#" class="text-dark me-2"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a href="#" class="text-dark me-2"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a href="#" class="text-dark"><i class="bi bi-twitter-x"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.1)">
+        © 2025 The Greenery -
+        <a class="text-dark" href="sources.html">References</a> | Team 2009-902
+      </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
