@@ -14,7 +14,11 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
-    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/5077/5077571.png" type="image/x-icon">
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/5077/5077571.png"
+      type="image/x-icon"
+    />
     <style>
       #hero-background {
         position: relative;
@@ -30,18 +34,17 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5); /* adjust opacity here */
+        background: rgba(0, 0, 0, 0.5);
         z-index: 1;
       }
 
-      /* Ensure content is above the overlay */
       #hero-background > * {
         position: relative;
         z-index: 2;
       }
     </style>
   </head>
-  <body class="bg-light">
+  <body>
     <div class="container-fluid hero px-0" id="hero-background">
       <div class="container">
         <header
@@ -78,14 +81,15 @@
           </ul>
         </header>
       </div>
-      <div class="px-4 pt-5 my-5 text-center" style="padding-bottom: 100px;">
+      <div class="px-4 pt-5 my-5 text-center" style="padding-bottom: 100px">
         <h1 class="display-5 fw-bold text-white">The Greenery</h1>
         <div class="col-lg-6 mx-auto">
           <p class="lead mb-4">
-            Welcome to The Greenery, the largest Vegan-friendly restaurant in Central PA. Here,
-            you'll find everything to meet your dietary needs, from buddha bowls filled with juicy
-            vegetables to chocolate mousse that is sure to leave a sweet taste in your mouth! We do all
-            of this while ensuring our committment to sustainability.
+            Welcome to The Greenery, the largest Vegan-friendly restaurant in
+            Central PA. Here, you'll find everything to meet your dietary needs,
+            from buddha bowls filled with juicy vegetables to chocolate mousse
+            that is sure to leave a sweet taste in your mouth! We do all of this
+            while ensuring our committment to sustainability.
           </p>
           <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <a href="order.html"
@@ -236,60 +240,98 @@
       </div>
       <section class="my-4 p-5 bg-light rounded shadow-lg">
         <div class="row align-items-center">
-            <div class="col-md-8">
-                <h2 class="text-success mb-3">Dish of the Week: Spicy Peanut Noodles</h2>
-                <p class="lead">Indulge in our perfectly cooked noodles tossed in a creamy, spicy peanut sauce with crispy tofu, broccoli florets, and a sprinkle of sesame seeds. A customer favorite!</p>
-                <p>Available for a limited time. Try it today!</p>
-                <a href="menu.html" class="btn btn-outline-success">See Full Menu</a>
-            </div>
-            <div class="col-md-4">
-                <img src="media/Peanut-Noodles.jpg" alt="Spicy Peanut Noodles" class="img-fluid rounded shadow">
-            </div>
+          <div class="col-md-8">
+            <h2 class="text-success mb-3">
+              Dish of the Week: Spicy Peanut Noodles
+            </h2>
+            <p class="lead">
+              Indulge in our perfectly cooked noodles tossed in a creamy, spicy
+              peanut sauce with crispy tofu, broccoli florets, and a sprinkle of
+              sesame seeds. A customer favorite!
+            </p>
+            <p>Available for a limited time. Try it today!</p>
+            <a href="menu.html" class="btn btn-outline-success"
+              >See Full Menu</a
+            >
+          </div>
+          <div class="col-md-4">
+            <img
+              src="media/Peanut-Noodles.jpg"
+              alt="Spicy Peanut Noodles"
+              class="img-fluid rounded shadow"
+            />
+          </div>
         </div>
       </section>
       <section id="testimonials" class="my-5">
         <h2 class="text-center mb-4">What Our Customers Say</h2>
         <div class="row">
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                        <blockquote class="blockquote mb-0">
-                            <p><i class="bi bi-quote"></i> The best vegan food I've had in town! Fresh ingredients and amazing flavors. The Buddha Bowl is a must-try.</p>
-                            <footer class="blockquote-footer mt-2">Sarah K.</footer>
-                        </blockquote>
-                    </div>
-                </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p>
+                    <i class="bi bi-quote"></i> The best vegan food I've had in
+                    town! Fresh ingredients and amazing flavors. The Buddha Bowl
+                    is a must-try.
+                  </p>
+                  <footer class="blockquote-footer mt-2">Sarah K.</footer>
+                </blockquote>
+              </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body">
-                         <blockquote class="blockquote mb-0">
-                             <p><i class="bi bi-quote"></i> I'm not even vegan, but I love this place. The Beyond Burger is incredible. Great atmosphere too!</p>
-                            <footer class="blockquote-footer mt-2">Mike P.</footer>
-                        </blockquote>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p>
+                    <i class="bi bi-quote"></i> I'm not even vegan, but I love
+                    this place. The Beyond Burger is incredible. Great
+                    atmosphere too!
+                  </p>
+                  <footer class="blockquote-footer mt-2">Mike P.</footer>
+                </blockquote>
+              </div>
             </div>
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow-sm">
-                     <div class="card-body">
-                         <blockquote class="blockquote mb-0">
-                             <p><i class="bi bi-quote"></i> So happy to have a restaurant committed to sustainability AND delicious food. Their composting program is fantastic.</p>
-                            <footer class="blockquote-footer mt-2">Chloe T.</footer>
-                        </blockquote>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                  <p>
+                    <i class="bi bi-quote"></i> So happy to have a restaurant
+                    committed to sustainability AND delicious food. Their
+                    composting program is fantastic.
+                  </p>
+                  <footer class="blockquote-footer mt-2">Chloe T.</footer>
+                </blockquote>
+              </div>
             </div>
+          </div>
         </div>
-    </section>
-    
-    <!-- === NEW: Location & Hours Snippet === -->
-    <section class="mb-5 text-center">
-         <h2 class="mb-3">Visit Us</h2>
-         <p><i class="bi bi-geo-alt-fill me-1 text-success"></i> 123 Plantain Place, Vegville, VG 54321</p>
-         <p><i class="bi bi-clock-fill me-1 text-success"></i> Open Daily: 11:00 AM - 9:00 PM (Weekends vary)</p>
-         <a href="contact.html" class="btn btn-secondary">Get Directions & Full Hours</a>
-     </section>
+      </section>
+
+      <section class="mb-5">
+        <div class="row pb-3">
+          <div class="col d-flex flex-column">
+            <h2 class="mb-3">Visit Us</h2>
+            <p>
+              <i class="bi bi-geo-alt-fill me-1 text-success"></i>
+              777 Water Wheel Drive, Champion, PA, 15622
+            </p>
+            <p>
+              <i class="bi bi-clock-fill me-1 text-success"></i> Open Daily: 11:00
+              AM - 9:00 PM (Weekends vary)
+            </p>
+            <a href="contact.html" class="btn btn-secondary"
+              >Get Directions & Full Hours</a
+            >
+          </div>
+          <div class="col">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3055.349264639708!2d-79.30027812361283!3d40.02298087950967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89cad17abd9a35e5%3A0xe64df0643e194e61!2sSeven%20Springs%20Mountain%20Resort!5e0!3m2!1sen!2sus!4v1743959616083!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </section>
     </div>
     <footer class="bg-light text-center text-lg-start mt-auto">
       <div class="container p-4">

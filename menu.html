@@ -1,265 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>The Greenery - Menu</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/5077/5077571.png" type="image/x-icon">
-    <style>
-        
-    </style>
-</head>
-<body>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://cdn-icons-png.flaticon.com/512/5077/5077571.png"
+      type="image/x-icon"
+    />
+    <style></style>
+  </head>
+  <body>
     <div class="container">
-        <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-          <a href="index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-            <span class="fs-4">The Greenery</span>
-          </a>
-          <ul class="nav nav-pills">
-            <li class="nav-item"><a href="order.html" class="nav-link text-dark" style="margin-right: 15px;">Order</a></li>
-            <li class="nav-item"><a href="menu.html" class="nav-link active bg-success" aria-current="page" style="margin-right: 10px;">Menu</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link text-dark">Contact</a></li>
-            <li class="nav-item"><a href="process.html" class="nav-link text-dark">Process</a></li>
-            <li class="nav-item"><a href="sources.html" class="nav-link text-dark">References</a></li>
-          </ul>
-        </header>
-    </div>
-    <main class="container my-5">
-        <h1 class="text-center mb-2">Our Menu</h1>
-        <p class="text-center lead mb-4">Fresh, vibrant, and delicious plant-based dishes crafted with care.</p>
-
-        <!-- Dietary Key & Download Link -->
-        <div class="text-center mb-4 p-3 bg-light rounded">
-            <span class="badge bg-white text-dark border me-2 p-2 shadow-sm"><i class="bi bi-asterisk text-success"></i> GF = Gluten-Free</span>
-            <span class="badge bg-white text-dark border me-2 p-2 shadow-sm"><i class="bi bi-nut-fill text-warning"></i> NF = Nut-Free Option Available</span>
-            <span class="badge bg-white text-dark border me-2 p-2 shadow-sm"><i class="bi bi-egg-fill text-info"></i> SF = Soy-Free Option Available</span>
-            <br class="d-sm-none"> <!-- Line break on small screens -->
-            <a href="#" class="btn btn-outline-secondary btn-sm mt-3 mt-md-0 disabled" aria-disabled="true"><i class="bi bi-download me-1"></i> Download PDF Menu (Coming Soon)</a>
-        </div>
-
-        <!-- Tab Navigation for Categories -->
-        <ul class="nav nav-tabs justify-content-center mb-4" id="menuTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="appetizers-tab" data-bs-toggle="tab" data-bs-target="#appetizers-panel" type="button" role="tab" aria-controls="appetizers-panel" aria-selected="true">Appetizers</button>
+      <header
+        class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
+      >
+        <a
+          href="index.html"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+        >
+          <span class="fs-4">The Greenery</span>
+        </a>
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a
+              href="order.html"
+              class="nav-link text-dark"
+              style="margin-right: 15px"
+              >Order</a
+            >
           </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="mains-tab" data-bs-toggle="tab" data-bs-target="#mains-panel" type="button" role="tab" aria-controls="mains-panel" aria-selected="false">Main Courses</button>
+          <li class="nav-item">
+            <a
+              href="menu.html"
+              class="nav-link active bg-success"
+              aria-current="page"
+              style="margin-right: 10px"
+              >Menu</a
+            >
           </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="desserts-tab" data-bs-toggle="tab" data-bs-target="#desserts-panel" type="button" role="tab" aria-controls="desserts-panel" aria-selected="false">Desserts</button>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link text-dark">Contact</a>
           </li>
-           <li class="nav-item" role="presentation">
-            <button class="nav-link" id="drinks-tab" data-bs-toggle="tab" data-bs-target="#drinks-panel" type="button" role="tab" aria-controls="drinks-panel" aria-selected="false">Drinks</button>
+          <li class="nav-item">
+            <a href="process.html" class="nav-link text-dark">Process</a>
+          </li>
+          <li class="nav-item">
+            <a href="sources.html" class="nav-link text-dark">References</a>
           </li>
         </ul>
+      </header>
+    </div>
+    <main class="container my-5">
+      <h1 class="text-center mb-2">Our Menu</h1>
+      <p class="text-center lead mb-4">
+        Fresh, vibrant, and delicious plant-based dishes crafted with care.
+      </p>
 
-        <div class="tab-content" id="menuTabContent">
-          <!-- Appetizers Panel -->
-          <div class="tab-pane fade show active" id="appetizers-panel" role="tabpanel" aria-labelledby="appetizers-tab" tabindex="0">
-                <h2 class="visually-hidden">Appetizers</h2>
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="media/Spring-Roll-Recipe.jpg" class="card-img-top" alt="Crispy Vegan Spring Rolls" style="height: 200px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title d-flex justify-content-between align-items-center">
-                                    Crispy Spring Rolls
-                                    <span class="badge bg-success"><i class="bi bi-star-fill"></i> Popular</span>
-                                </h5>
-                                <p class="card-text">Vegetable-filled rolls served with a sweet chili dipping sauce. <span class="text-muted small">(Contains Gluten)</span></p>
-                                <p class="card-text fw-bold mt-auto">$8.50</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 shadow-sm">
-                             <img src="media/avocado-toast-bites.jpg" class="card-img-top" alt="Avocado Toast Bites" style="height: 200px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title d-flex justify-content-between align-items-center">
-                                    Avocado Toast Bites
-                                     <i class="bi bi-asterisk text-success ms-1" title="Gluten-Free Option Available"></i>
-                                </h5>
-                                <p class="card-text">Smashed avocado on toasted sourdough (GF option available) with chili flakes and microgreens.</p>
-                                <p class="card-text fw-bold mt-auto">$9.50</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="media/hummus-trio-I-howsweeteats.com-10-500x500.jpg" class="card-img-top" alt="Hummus Platter" style="height: 200px; object-fit: cover;">
-                           <div class="card-body d-flex flex-column">
-                               <h5 class="card-title d-flex justify-content-between align-items-center">
-                                   Hummus Platter
-                                   <i class="bi bi-asterisk text-success ms-1" title="Gluten-Free Option Available"></i>
-                                    <i class="bi bi-nut-fill text-warning ms-1" title="Nut-Free Option Available"></i>
-                               </h5>
-                               <p class="card-text">Creamy house-made hummus served with warm pita bread (GF crackers available) and fresh vegetable sticks.</p>
-                               <p class="card-text fw-bold mt-auto">$10.00</p>
-                           </div>
-                       </div>
-                   </div>
+      <!-- Dietary Key & Download Link -->
+      <div class="text-center mb-4 p-3 bg-light rounded">
+        <span class="badge bg-white text-dark border me-2 p-2 shadow-sm"
+          ><i class="bi bi-asterisk text-success"></i> GF = Gluten-Free</span
+        >
+        <span class="badge bg-white text-dark border me-2 p-2 shadow-sm"
+          ><i class="bi bi-nut-fill text-warning"></i> NF = Nut-Free Option
+          Available</span
+        >
+        <span class="badge bg-white text-dark border me-2 p-2 shadow-sm"
+          ><i class="bi bi-egg-fill text-info"></i> SF = Soy-Free Option
+          Available</span
+        >
+        <br class="d-sm-none" />
+        <!-- Line break on small screens -->
+        <a
+          href="#"
+          class="btn btn-outline-secondary btn-sm mt-3 mt-md-0 disabled"
+          aria-disabled="true"
+          ><i class="bi bi-download me-1"></i> Download PDF Menu (Coming
+          Soon)</a
+        >
+      </div>
+
+      <!-- Tab Navigation for Categories -->
+      <ul
+        class="nav nav-tabs justify-content-center mb-4"
+        id="menuTab"
+        role="tablist"
+      >
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="appetizers-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#appetizers-panel"
+            type="button"
+            role="tab"
+            aria-controls="appetizers-panel"
+            aria-selected="true"
+          >
+            Appetizers
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="mains-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#mains-panel"
+            type="button"
+            role="tab"
+            aria-controls="mains-panel"
+            aria-selected="false"
+          >
+            Main Courses
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="desserts-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#desserts-panel"
+            type="button"
+            role="tab"
+            aria-controls="desserts-panel"
+            aria-selected="false"
+          >
+            Desserts
+          </button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="drinks-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#drinks-panel"
+            type="button"
+            role="tab"
+            aria-controls="drinks-panel"
+            aria-selected="false"
+          >
+            Drinks
+          </button>
+        </li>
+      </ul>
+
+      <div class="tab-content" id="menuTabContent">
+        <!-- Appetizers Panel -->
+        <div
+          class="tab-pane fade show active"
+          id="appetizers-panel"
+          role="tabpanel"
+          aria-labelledby="appetizers-tab"
+          tabindex="0"
+        >
+          <h2 class="visually-hidden">Appetizers</h2>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/Spring-Roll-Recipe.jpg"
+                  class="card-img-top"
+                  alt="Crispy Vegan Spring Rolls"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5
+                    class="card-title d-flex justify-content-between align-items-center"
+                  >
+                    Crispy Spring Rolls
+                    <span class="badge bg-success"
+                      ><i class="bi bi-star-fill"></i> Popular</span
+                    >
+                  </h5>
+                  <p class="card-text">
+                    Vegetable-filled rolls served with a sweet chili dipping
+                    sauce.
+                    <span class="text-muted small">(Contains Gluten)</span>
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$8.50</p>
                 </div>
-          </div>
-
-          <!-- Main Courses Panel -->
-          <div class="tab-pane fade" id="mains-panel" role="tabpanel" aria-labelledby="mains-tab" tabindex="0">
-              <h2 class="visually-hidden">Main Courses</h2>
-               <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                    <div class="col">
-                        <div class="card h-100 shadow-sm">
-                             <img src="media/tofu-buddha-bowls-peanut-sauce-8-1.jpg" class="card-img-top" alt="Colorful Buddha Bowl" style="height: 200px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title d-flex justify-content-between align-items-center">
-                                   Buddha Bowl
-                                    <i class="bi bi-asterisk text-success ms-1" title="Gluten-Free"></i>
-                                    <i class="bi bi-nut-fill text-warning ms-1" title="Nut-Free Option (dressing change)"></i>
-                                     <i class="bi bi-egg-fill text-info ms-1" title="Soy-Free Option (tofu change)"></i>
-                                </h5>
-                                <p class="card-text">Quinoa base, roasted sweet potatoes, chickpeas, steamed kale, avocado slices, crispy tofu, lemon-tahini dressing. <span class="text-muted small">(GF) (Contains Sesame, Soy)</span></p>
-                                <p class="card-text fw-bold mt-auto">$15.50</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card h-100 shadow-sm">
-                             <img src="media/beyond-burger-nutrition-and-ingredients-1569351590.jpg" class="card-img-top" alt="Vegan Beyond Burger with Fries" style="height: 200px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title d-flex justify-content-between align-items-center">
-                                    Beyond Burger Deluxe
-                                     <span class="badge bg-success"><i class="bi bi-star-fill"></i> Popular</span>
-                                </h5>
-                                 <p class="card-text">Grilled Beyond Meat patty, vegan cheddar, lettuce, tomato, onion, pickles, special sauce on a toasted brioche bun. Served with seasoned fries. <span class="text-muted small">(Contains Gluten, Soy)</span></p>
-                                <p class="card-text fw-bold mt-auto">$16.50</p>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col">
-                        <div class="card h-100 shadow-sm">
-                             <img src="media/Lentil-Shepherds-Pie-Featured.jpg" class="card-img-top" alt="Lentil Shepherd's Pie" style="height: 200px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title d-flex justify-content-between align-items-center">
-                                    Lentil Shepherd's Pie
-                                     <i class="bi bi-asterisk text-success ms-1" title="Gluten-Free"></i>
-                                     <i class="bi bi-nut-fill text-warning ms-1" title="Nut-Free"></i>
-                                     <i class="bi bi-egg-fill text-info ms-1" title="Soy-Free"></i>
-                                </h5>
-                                 <p class="card-text">Hearty lentil and vegetable stew topped with creamy mashed potato crust, baked until golden. <span class="text-muted small">(GF, NF, SF)</span></p>
-                                <p class="card-text fw-bold mt-auto">$17.00</p>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col">
-                        <div class="card h-100 shadow-sm">
-                             <img src="media/Peanut-Noodles.jpg" class="card-img-top" alt="Spicy Peanut Noodles" style="height: 200px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title d-flex justify-content-between align-items-center">
-                                    Spicy Peanut Noodles
-                                    <span class="badge bg-info"><i class="bi bi-sparkles"></i> New</span>
-                                </h5>
-                                 <p class="card-text">Rice noodles tossed in a creamy, spicy peanut sauce with baked tofu, broccoli, carrots, and topped with crushed peanuts & cilantro. <span class="text-muted small">(Contains Peanuts, Soy, Gluten - ask for GF option)</span></p>
-                                <p class="card-text fw-bold mt-auto">$16.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-          </div>
-
-          <!-- Desserts Panel -->
-           <div class="tab-pane fade" id="desserts-panel" role="tabpanel" aria-labelledby="desserts-tab" tabindex="0">
-                <h2 class="visually-hidden">Desserts</h2>
-                <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                     <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="media/Avocado-Chocolate-Mousse-Vegan-and-Low-Carb.jpg" class="card-img-top" alt="Chocolate Avocado Mousse" style="height: 200px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Chocolate Avocado Mousse <i class="bi bi-asterisk text-success ms-1" title="Gluten-Free"></i> <i class="bi bi-nut-fill text-warning ms-1" title="Nut-Free"></i></h5>
-                                <p class="card-text">Rich, decadent, and surprisingly healthy chocolate mousse made with avocado and sweetened naturally. Topped with berries. <span class="text-muted small">(GF, NF)</span></p>
-                                <p class="card-text fw-bold mt-auto">$7.50</p>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="media/vegan-blueberry-cheesecake-4.jpg" class="card-img-top" alt="Vegan Berry Cheesecake Slice" style="height: 200px; object-fit: cover;">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Cashew Berry Cheesecake</h5>
-                                <p class="card-text">Creamy cashew-based cheesecake with a nutty date crust and a vibrant berry swirl topping. <span class="text-muted small">(Contains Nuts, Gluten - crust)</span></p>
-                                <p class="card-text fw-bold mt-auto">$8.50</p>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col">
-                        <div class="card h-100 shadow-sm">
-                           <img src="media/apple-crisp-with-ice-cream-and-caramel.jpg" class="card-img-top" alt="Apple Crumble with Vegan Ice Cream" style="height: 200px; object-fit: cover;">
-                           <div class="card-body d-flex flex-column">
-                               <h5 class="card-title">Warm Apple Crumble <i class="bi bi-nut-fill text-warning ms-1" title="Nut-Free Option Available"></i></h5>
-                               <p class="card-text">Spiced apples baked under a crunchy oat topping. Served warm with a scoop of vanilla bean vegan ice cream. <span class="text-muted small">(Contains Gluten, ask for NF/GF options)</span></p>
-                               <p class="card-text fw-bold mt-auto">$8.00</p>
-                           </div>
-                       </div>
-                   </div>
-                </div>
-           </div>
-
-           <!-- Drinks Panel -->
-            <div class="tab-pane fade" id="drinks-panel" role="tabpanel" aria-labelledby="drinks-tab" tabindex="0">
-                 <h2 class="visually-hidden">Drinks</h2>
-                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-                      <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="media/orange-juice-1296x728-feature.jpg" class="card-img-top" alt="Apple Crumble with Vegan Ice Cream" style="height: 200px; object-fit: cover;">
-                           <div class="card-body d-flex flex-column">
-                               <h5 class="card-title">Freshly Squeezed Orange Juice</h5>
-                               <p class="card-text">100% pure, refreshing orange juice, squeezed daily.</p>
-                               <p class="card-text fw-bold mt-auto">$5.00</p>
-                           </div>
-                       </div>
-                    </div>
-                     <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="media/VERTICAL-IMAGE-Vitality-Smoothie-20-copy.jpg" class="card-img-top" alt="Apple Crumble with Vegan Ice Cream" style="height: 200px; object-fit: cover;">
-                           <div class="card-body d-flex flex-column">
-                               <h5 class="card-title">Green Vitality Smoothie</h5>
-                               <p class="card-text">Spinach, kale, banana, mango, almond milk, and chia seeds blended smooth.</p>
-                               <p class="card-text fw-bold mt-auto">$7.00</p>
-                           </div>
-                       </div>
-                    </div>
-                     <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="media/How-to-make-your-own-kombucha-2-1400x788-.jpg" class="card-img-top" alt="Apple Crumble with Vegan Ice Cream" style="height: 200px; object-fit: cover;">
-                           <div class="card-body d-flex flex-column">
-                               <h5 class="card-title">Local Kombucha</h5>
-                               <p class="card-text">Ask your server for today's available flavors from Seven Springs Kombucha.</p>
-                               <p class="card-text fw-bold mt-auto">$6.00</p>
-                           </div>
-                       </div>
-                    </div>
-                     <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="media/tips-to-recognize-good-quality-coffee-424970.jpg" class="card-img-top" alt="Apple Crumble with Vegan Ice Cream" style="height: 200px; object-fit: cover;">
-                           <div class="card-body d-flex flex-column">
-                               <h5 class="card-title">Organic Fair-Trade Coffee</h5>
-                               <p class="card-text">Regular or Decaf. Served with choice of oat, soy, or almond milk.</p>
-                               <p class="card-text fw-bold mt-auto">$3.50</p>
-                           </div>
-                       </div>
-                    </div>
-                     <div class="col">
-                        <div class="card h-100 shadow-sm">
-                            <img src="media/Herbal_Tea_Chamomile.jpg" class="card-img-top" alt="Apple Crumble with Vegan Ice Cream" style="height: 200px; object-fit: cover;">
-                           <div class="card-body d-flex flex-column">
-                               <h5 class="card-title">Herbal Tea Selection</h5>
-                               <p class="card-text">Choose from Peppermint, Chamomile, Ginger Lemon, or Green Tea.</p>
-                               <p class="card-text fw-bold mt-auto">$3.00</p>
-                           </div>
-                       </div>
-                    </div>
-                 </div>
+              </div>
             </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/avocado-toast-bites.jpg"
+                  class="card-img-top"
+                  alt="Avocado Toast Bites"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5
+                    class="card-title d-flex justify-content-between align-items-center"
+                  >
+                    Avocado Toast Bites
+                    <i
+                      class="bi bi-asterisk text-success ms-1"
+                      title="Gluten-Free Option Available"
+                    ></i>
+                  </h5>
+                  <p class="card-text">
+                    Smashed avocado on toasted sourdough (GF option available)
+                    with chili flakes and microgreens.
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$9.50</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/hummus-trio-I-howsweeteats.com-10-500x500.jpg"
+                  class="card-img-top"
+                  alt="Hummus Platter"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5
+                    class="card-title d-flex justify-content-between align-items-center"
+                  >
+                    Hummus Platter
+                    <i
+                      class="bi bi-asterisk text-success ms-1"
+                      title="Gluten-Free Option Available"
+                    ></i>
+                    <i
+                      class="bi bi-nut-fill text-warning ms-1"
+                      title="Nut-Free Option Available"
+                    ></i>
+                  </h5>
+                  <p class="card-text">
+                    Creamy house-made hummus served with warm pita bread (GF
+                    crackers available) and fresh vegetable sticks.
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$10.00</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+        <!-- Main Courses Panel -->
+        <div
+          class="tab-pane fade"
+          id="mains-panel"
+          role="tabpanel"
+          aria-labelledby="mains-tab"
+          tabindex="0"
+        >
+          <h2 class="visually-hidden">Main Courses</h2>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/tofu-buddha-bowls-peanut-sauce-8-1.jpg"
+                  class="card-img-top"
+                  alt="Colorful Buddha Bowl"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5
+                    class="card-title d-flex justify-content-between align-items-center"
+                  >
+                    Buddha Bowl
+                    <i
+                      class="bi bi-asterisk text-success ms-1"
+                      title="Gluten-Free"
+                    ></i>
+                    <i
+                      class="bi bi-nut-fill text-warning ms-1"
+                      title="Nut-Free Option (dressing change)"
+                    ></i>
+                    <i
+                      class="bi bi-egg-fill text-info ms-1"
+                      title="Soy-Free Option (tofu change)"
+                    ></i>
+                  </h5>
+                  <p class="card-text">
+                    Quinoa base, roasted sweet potatoes, chickpeas, steamed
+                    kale, avocado slices, crispy tofu, lemon-tahini dressing.
+                    <span class="text-muted small"
+                      >(GF) (Contains Sesame, Soy)</span
+                    >
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$15.50</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/beyond-burger-nutrition-and-ingredients-1569351590.jpg"
+                  class="card-img-top"
+                  alt="Vegan Beyond Burger with Fries"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5
+                    class="card-title d-flex justify-content-between align-items-center"
+                  >
+                    Beyond Burger Deluxe
+                    <span class="badge bg-success"
+                      ><i class="bi bi-star-fill"></i> Popular</span
+                    >
+                  </h5>
+                  <p class="card-text">
+                    Grilled Beyond Meat patty, vegan cheddar, lettuce, tomato,
+                    onion, pickles, special sauce on a toasted brioche bun.
+                    Served with seasoned fries.
+                    <span class="text-muted small">(Contains Gluten, Soy)</span>
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$16.50</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/Lentil-Shepherds-Pie-Featured.jpg"
+                  class="card-img-top"
+                  alt="Lentil Shepherd's Pie"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5
+                    class="card-title d-flex justify-content-between align-items-center"
+                  >
+                    Lentil Shepherd's Pie
+                    <i
+                      class="bi bi-asterisk text-success ms-1"
+                      title="Gluten-Free"
+                    ></i>
+                    <i
+                      class="bi bi-nut-fill text-warning ms-1"
+                      title="Nut-Free"
+                    ></i>
+                    <i
+                      class="bi bi-egg-fill text-info ms-1"
+                      title="Soy-Free"
+                    ></i>
+                  </h5>
+                  <p class="card-text">
+                    Hearty lentil and vegetable stew topped with creamy mashed
+                    potato crust, baked until golden.
+                    <span class="text-muted small">(GF, NF, SF)</span>
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$17.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/Peanut-Noodles.jpg"
+                  class="card-img-top"
+                  alt="Spicy Peanut Noodles"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5
+                    class="card-title d-flex justify-content-between align-items-center"
+                  >
+                    Spicy Peanut Noodles
+                    <span class="badge bg-info"
+                      ><i class="bi bi-sparkles"></i> New</span
+                    >
+                  </h5>
+                  <p class="card-text">
+                    Rice noodles tossed in a creamy, spicy peanut sauce with
+                    baked tofu, broccoli, carrots, and topped with crushed
+                    peanuts & cilantro.
+                    <span class="text-muted small"
+                      >(Contains Peanuts, Soy, Gluten - ask for GF option)</span
+                    >
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$16.00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desserts Panel -->
+        <div
+          class="tab-pane fade"
+          id="desserts-panel"
+          role="tabpanel"
+          aria-labelledby="desserts-tab"
+          tabindex="0"
+        >
+          <h2 class="visually-hidden">Desserts</h2>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/Avocado-Chocolate-Mousse-Vegan-and-Low-Carb.jpg"
+                  class="card-img-top"
+                  alt="Chocolate Avocado Mousse"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">
+                    Chocolate Avocado Mousse
+                    <i
+                      class="bi bi-asterisk text-success ms-1"
+                      title="Gluten-Free"
+                    ></i>
+                    <i
+                      class="bi bi-nut-fill text-warning ms-1"
+                      title="Nut-Free"
+                    ></i>
+                  </h5>
+                  <p class="card-text">
+                    Rich, decadent, and surprisingly healthy chocolate mousse
+                    made with avocado and sweetened naturally. Topped with
+                    berries. <span class="text-muted small">(GF, NF)</span>
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$7.50</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/vegan-blueberry-cheesecake-4.jpg"
+                  class="card-img-top"
+                  alt="Vegan Berry Cheesecake Slice"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Cashew Berry Cheesecake</h5>
+                  <p class="card-text">
+                    Creamy cashew-based cheesecake with a nutty date crust and a
+                    vibrant berry swirl topping.
+                    <span class="text-muted small"
+                      >(Contains Nuts, Gluten - crust)</span
+                    >
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$8.50</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/apple-crisp-with-ice-cream-and-caramel.jpg"
+                  class="card-img-top"
+                  alt="Apple Crumble with Vegan Ice Cream"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">
+                    Warm Apple Crumble
+                    <i
+                      class="bi bi-nut-fill text-warning ms-1"
+                      title="Nut-Free Option Available"
+                    ></i>
+                  </h5>
+                  <p class="card-text">
+                    Spiced apples baked under a crunchy oat topping. Served warm
+                    with a scoop of vanilla bean vegan ice cream.
+                    <span class="text-muted small"
+                      >(Contains Gluten, ask for NF/GF options)</span
+                    >
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$8.00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Drinks Panel -->
+        <div
+          class="tab-pane fade"
+          id="drinks-panel"
+          role="tabpanel"
+          aria-labelledby="drinks-tab"
+          tabindex="0"
+        >
+          <h2 class="visually-hidden">Drinks</h2>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/orange-juice-1296x728-feature.jpg"
+                  class="card-img-top"
+                  alt="Apple Crumble with Vegan Ice Cream"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Freshly Squeezed Orange Juice</h5>
+                  <p class="card-text">
+                    100% pure, refreshing orange juice, squeezed daily.
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$5.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/VERTICAL-IMAGE-Vitality-Smoothie-20-copy.jpg"
+                  class="card-img-top"
+                  alt="Apple Crumble with Vegan Ice Cream"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Green Vitality Smoothie</h5>
+                  <p class="card-text">
+                    Spinach, kale, banana, mango, almond milk, and chia seeds
+                    blended smooth.
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$7.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/How-to-make-your-own-kombucha-2-1400x788-.jpg"
+                  class="card-img-top"
+                  alt="Apple Crumble with Vegan Ice Cream"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Local Kombucha</h5>
+                  <p class="card-text">
+                    Ask your server for today's available flavors from Seven
+                    Springs Kombucha.
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$6.00</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/tips-to-recognize-good-quality-coffee-424970.jpg"
+                  class="card-img-top"
+                  alt="Apple Crumble with Vegan Ice Cream"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Organic Fair-Trade Coffee</h5>
+                  <p class="card-text">
+                    Regular or Decaf. Served with choice of oat, soy, or almond
+                    milk.
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$3.50</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 shadow-sm">
+                <img
+                  src="media/Herbal_Tea_Chamomile.jpg"
+                  class="card-img-top"
+                  alt="Apple Crumble with Vegan Ice Cream"
+                  style="height: 200px; object-fit: cover"
+                />
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">Herbal Tea Selection</h5>
+                  <p class="card-text">
+                    Choose from Peppermint, Chamomile, Ginger Lemon, or Green
+                    Tea.
+                  </p>
+                  <p class="card-text fw-bold mt-auto">$3.00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer class="bg-light text-center text-lg-start mt-auto">
       <div class="container p-4">
@@ -296,6 +621,10 @@
         <a class="text-dark" href="sources.html">References</a> | Team 2009-902
       </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-</body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
