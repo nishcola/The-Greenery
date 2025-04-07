@@ -28,8 +28,15 @@
       >
         <a
           href="index.html"
-          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+          class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none navbar-brand"
         >
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/5077/5077571.png"
+            alt="Logo"
+            width="30"
+            height="24"
+            class="d-inline-block mx-2 mt-2 align-text-top"
+          />
           <span class="fs-4">The Greenery</span>
         </a>
         <ul class="nav nav-pills">
@@ -507,6 +514,137 @@
                 </div>
               </div>
             </div>
+
+            <h3 class="text-success border-bottom pb-1 mt-4 mb-3">
+              Combo Meals
+            </h3>
+            <!-- Burger Combo -->
+            <div class="card mb-3 shadow-sm">
+              <div class="row g-0">
+                <div
+                  class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2"
+                >
+                  <img
+                    src="media/burger--fries.jpg"
+                    class="img-fluid rounded-start"
+                    alt="Burger Combo"
+                    style="max-height: 80px; width: auto"
+                  />
+                </div>
+                <div class="col-9 col-sm-10">
+                  <div class="card-body py-2 px-3">
+                    <div
+                      class="d-flex justify-content-between align-items-start mb-1"
+                    >
+                      <div>
+                        <h5 class="card-title mb-0">Burger Combo</h5>
+                        <p class="card-text text-muted small d-none d-md-block">
+                          Beyond Burger Deluxe (w/ Fries) + Choice of Drink.
+                        </p>
+                        <span class="fw-bold">$19.00</span>
+                      </div>
+                      <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                        <label for="qty-combo-burger" class="visually-hidden"
+                          >Quantity</label
+                        >
+                        <input
+                          type="number"
+                          id="qty-combo-burger"
+                          class="form-control form-control-sm"
+                          value="0"
+                          min="0"
+                          max="10"
+                          style="width: 65px"
+                          data-price="19.00"
+                          data-name="Burger Combo"
+                        />
+                      </div>
+                    </div>
+                    <!-- Simple Option Example for Combo -->
+                    <div class="mt-1 small">
+                      <label class="form-check-label me-2 fw-semibold"
+                        >Drink Choice:</label
+                      >
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="burgerComboDrink"
+                          id="comboDrinkCoke"
+                          value="0"
+                          checked
+                          data-parent-id="qty-combo-burger"
+                        />
+                        <label class="form-check-label" for="comboDrinkCoke"
+                          >Coke</label
+                        >
+                      </div>
+                      <div class="form-check form-check-inline">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="burgerComboDrink"
+                          id="comboDrinkTea"
+                          value="0"
+                          data-parent-id="qty-combo-burger"
+                        />
+                        <label class="form-check-label" for="comboDrinkTea"
+                          >Iced Tea</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Bowl & Bites Combo -->
+            <div class="card mb-3 shadow-sm">
+              <div class="row g-0">
+                <div
+                  class="col-3 col-sm-2 d-flex align-items-center justify-content-center p-2"
+                >
+                  <img
+                    src="media/rice-paper-rolls-1-2.jpg"
+                    class="img-fluid rounded-start"
+                    alt="Bowl and Bites Combo"
+                    style="max-height: 80px; width: auto"
+                  />
+                </div>
+                <div class="col-9 col-sm-10">
+                  <div class="card-body py-2 px-3">
+                    <div
+                      class="d-flex justify-content-between align-items-start mb-1"
+                    >
+                      <div>
+                        <h5 class="card-title mb-0">Bowl & Bites Combo</h5>
+                        <p class="card-text text-muted small d-none d-md-block">
+                          Buddha Bowl + Crispy Spring Rolls Appetizer.
+                        </p>
+                        <span class="fw-bold">$22.00</span>
+                      </div>
+                      <div class="d-flex align-items-center flex-shrink-0 ps-2">
+                        <label for="qty-combo-bowl" class="visually-hidden"
+                          >Quantity</label
+                        >
+                        <input
+                          type="number"
+                          id="qty-combo-bowl"
+                          class="form-control form-control-sm"
+                          value="0"
+                          min="0"
+                          max="10"
+                          style="width: 65px"
+                          data-price="22.00"
+                          data-name="Bowl & Bites Combo"
+                        />
+                      </div>
+                    </div>
+                    <!-- Note: Could add options for Buddha Bowl customizations here if needed, linked to qty-combo-bowl -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <!-- Desserts Section -->
             <h3 class="text-success border-bottom pb-1 mt-4 mb-3">Desserts</h3>
             <!-- Chocolate Avocado Mousse -->
@@ -1158,6 +1296,40 @@
               <button type="submit" class="btn btn-success w-100 btn-lg">
                 Place Order
               </button>
+
+              <div class="mt-4 p-3 border rounded bg-light text-center">
+                <h5 class="mb-3">Prefer Other Delivery?</h5>
+                <!-- Replace # with actual partner links -->
+                <i class="bi bi-truck me-1"></i>
+                <a
+                  href="order.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-dark me-2"
+                >
+                  Order on DoorDash
+                </a>
+                <br />
+                <i class="bi bi-bag-check-fill me-1"></i>
+                <a
+                  href="order.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-dark me-2"
+                >
+                  Order on Uber Eats
+                </a>
+                <br />
+                <i class="bi bi-box-seam me-1"></i>
+                <a
+                  href="order.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-dark me-2"
+                >
+                  Order on Grubhub
+                </a>
+              </div>
             </div>
             <!-- End sticky-top -->
           </div>
@@ -1166,39 +1338,95 @@
         <!-- End Row -->
       </form>
     </main>
-    <footer class="bg-light text-center text-lg-start mt-auto">
+    <footer class="bg-light text-center text-lg-start mt-auto border-top">
       <div class="container p-4">
         <div class="row">
-          <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <!-- Column 1: Restaurant Name -->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase">The Greenery</h5>
             <p>
               Deliciously compassionate food. Locally sourced, thoughtfully
-              prepared.
+              prepared right here in Vegville.
             </p>
+            <a href="#rewards-section" class="btn btn-sm btn-success"
+              >Join Our Rewards!</a
+            >
+            <!-- Link to homepage section -->
           </div>
-          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-            <h5 class="text-uppercase">Links</h5>
+
+          <!-- Column 2: Quick Links -->
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Quick Links</h5>
             <ul class="list-unstyled mb-0">
               <li><a href="menu.html" class="text-dark">Menu</a></li>
+              <li><a href="order.html" class="text-dark">Order Online</a></li>
               <li><a href="process.html" class="text-dark">Our Impact</a></li>
               <li><a href="contact.html" class="text-dark">Contact Us</a></li>
             </ul>
           </div>
+
+          <!-- === NEW Column 3: Order Delivery === -->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Order Delivery</h5>
+            <p class="small">Get your favorites delivered:</p>
+            <!-- Replace # with actual partner links -->
+            <div class="mb-2">
+              <i class="bi bi-truck me-1"></i>
+              <a
+                href="order.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-dark me-2"
+              >
+                DoorDash
+              </a>
+            </div>
+            <div class="mb-2">
+              <i class="bi bi-bag-check-fill me-1"></i>
+              <a
+                href="order.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-dark me-2"
+              >
+                Uber Eats
+              </a>
+            </div>
+            <div>
+              <i class="bi bi-box-seam me-1"></i>
+              <a
+                href="order.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-dark me-2"
+              >
+                Grubhub
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 4: Follow Us -->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase">Follow Us</h5>
-            <a href="#" class="text-dark me-2"
-              ><i class="bi bi-facebook"></i
+            <!-- Replace # with actual social links -->
+            <a href="#" class="text-dark me-2" title="Facebook"
+              ><i class="bi bi-facebook fs-4"></i
             ></a>
-            <a href="#" class="text-dark me-2"
-              ><i class="bi bi-instagram"></i
+            <a href="#" class="text-dark me-2" title="Instagram"
+              ><i class="bi bi-instagram fs-4"></i
             ></a>
-            <a href="#" class="text-dark"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="text-dark" title="Twitter/X"
+              ><i class="bi bi-twitter-x fs-4"></i
+            ></a>
           </div>
         </div>
       </div>
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.1)">
+      <div
+        class="text-center p-3"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
         © 2025 The Greenery -
-        <a class="text-dark" href="sources.html">References</a> | Team 2009-902
+        <a class="text-dark" href="sources.html">References</a>
       </div>
     </footer>
     <script src="script.js"></script>
