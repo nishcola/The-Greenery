@@ -42,6 +42,107 @@
         position: relative;
         z-index: 2;
       }
+
+      /* Chat Bubble / Window */
+      .chat-bubble {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        width: 60px;
+        height: 60px;
+        background-color: #198754;
+        color: white;
+        border-radius: 50%;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        /* Use a lower, but still high z-index */
+        z-index: 1040; /* LOWER z-index */
+        transition: transform 0.2s ease-in-out;
+      }
+      .chat-bubble:hover {
+        transform: scale(1.1);
+      }
+
+      /* Make the active selector slightly more specific using 'body' */
+      body .chat-window {
+        /* Added body selector */
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem; /* Default bottom */
+        width: 350px;
+        height: 450px;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6;
+        border-radius: 0.375rem;
+        box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+        /* Use a significantly higher z-index */
+        z-index: 1060; /* HIGHER z-index */
+        display: none;
+        flex-direction: column;
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
+          bottom 0.3s ease-in-out;
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      /* This class is ADDED by JS to show the window */
+      body .chat-window.active {
+        /* Added body selector */
+        display: flex !important; /* Keep !important here for good measure if needed */
+        opacity: 1;
+        transform: translateY(0);
+        /* === INCREASED GAP in calculation === */
+        /* Make the gap larger (e.g., 1rem instead of 0.5rem) */
+        bottom: calc(1rem + 60px + 1rem); /* Increased gap */
+        /* =================================== */
+      }
+
+      .chat-header {
+        /* Styles for header (bg-success, text-white etc handled by Bootstrap classes) */
+        padding: 0.5rem 1rem; /* Adjust padding if needed */
+        border-top-left-radius: 0.375rem;
+        border-top-right-radius: 0.375rem;
+      }
+
+      .chat-messages {
+        padding: 1rem;
+        flex-grow: 1; /* Take up available vertical space */
+        overflow-y: auto; /* Allow scrolling for messages */
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .chat-message.bot span {
+        background-color: #e9ecef;
+        border-radius: 15px 15px 15px 0;
+        max-width: 85%;
+        padding: 0.5rem 0.75rem; /* Added padding */
+        display: inline-block; /* Needed for max-width */
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      }
+
+      .chat-message.user {
+        text-align: right;
+      }
+
+      .chat-message.user span {
+        background-color: #d1e7dd; /* Success-subtle */
+        border-radius: 15px 15px 0 15px;
+        display: inline-block;
+        max-width: 85%;
+        text-align: left;
+        padding: 0.5rem 0.75rem; /* Added padding */
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+      }
+
+      .chat-input {
+        padding: 0.5rem;
+        border-top: 1px solid #dee2e6;
+      }
     </style>
   </head>
   <body>
@@ -50,13 +151,19 @@
         <header
           class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom"
         >
-        <a
-        href="index.html"
-        class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none navbar-brand"
-      >
-        <img src="https://cdn-icons-png.flaticon.com/512/5077/5077571.png" alt="Logo" width="30" height="24" class="d-inline-block mx-2 mt-2 align-text-top">
-        <span class="fs-4 text-white">The Greenery</span>
-      </a>
+          <a
+            href="index.html"
+            class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none navbar-brand"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/5077/5077571.png"
+              alt="Logo"
+              width="30"
+              height="24"
+              class="d-inline-block mx-2 mt-2 align-text-top"
+            />
+            <span class="fs-4 text-white">The Greenery</span>
+          </a>
           <ul class="nav nav-pills">
             <li class="nav-item">
               <a
@@ -251,9 +358,7 @@
               sesame seeds. A customer favorite!
             </p>
             <p>Available for a limited time. Try it today!</p>
-            <a href="menu.html" class="btn btn-success"
-              >See Full Menu</a
-            >
+            <a href="menu.html" class="btn btn-success">See Full Menu</a>
           </div>
           <div class="col-md-4">
             <img
@@ -311,17 +416,28 @@
           </div>
         </div>
       </section>
-      <section id="rewards-section" class="mb-5 mt-2 py-5 bg-success-subtle text-center">
+      <section
+        id="rewards-section"
+        class="mb-5 mt-2 py-5 bg-success-subtle text-center"
+      >
         <div class="container">
-            <i class="bi bi-award-fill fs-1 text-success mb-3"></i>
-            <h2 class="mb-3">Join The Greenery Rewards!</h2>
-            <p class="lead col-lg-8 mx-auto">Become a part of our loyalty program and earn points with every purchase. Get exclusive discounts, birthday treats, and early access to specials!</p>
-            <p>It's free and easy to join.</p>
-            <!-- Link this button to a future signup page or modal, or just the contact page for now -->
-            <a href="contact.html?subject=Rewards%20Program%20Inquiry" class="btn btn-lg btn-success">Learn More & Sign Up</a>
-             <!-- The ?subject=... prefills the subject line if they use the contact form -->
+          <i class="bi bi-award-fill fs-1 text-success mb-3"></i>
+          <h2 class="mb-3">Join The Greenery Rewards!</h2>
+          <p class="lead col-lg-8 mx-auto">
+            Become a part of our loyalty program and earn points with every
+            purchase. Get exclusive discounts, birthday treats, and early access
+            to specials!
+          </p>
+          <p>It's free and easy to join.</p>
+          <!-- Link this button to a future signup page or modal, or just the contact page for now -->
+          <a
+            href="contact.html?subject=Rewards%20Program%20Inquiry"
+            class="btn btn-lg btn-success"
+            >Learn More & Sign Up</a
+          >
+          <!-- The ?subject=... prefills the subject line if they use the contact form -->
         </div>
-    </section>
+      </section>
       <section class="mb-5 pt-4 pb-1">
         <div class="row pb-3">
           <div class="col d-flex flex-column">
@@ -331,86 +447,208 @@
               777 Water Wheel Drive, Champion, PA, 15622
             </p>
             <p>
-              <i class="bi bi-clock-fill me-1 text-success"></i> Open Daily: 11:00
-              AM - 9:00 PM (Weekends vary)
+              <i class="bi bi-clock-fill me-1 text-success"></i> Open Daily:
+              11:00 AM - 9:00 PM (Weekends vary)
             </p>
             <a href="contact.html" class="btn btn-secondary"
               >Get Directions & Full Hours</a
             >
           </div>
           <div class="col">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3055.349264639708!2d-79.30027812361283!3d40.02298087950967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89cad17abd9a35e5%3A0xe64df0643e194e61!2sSeven%20Springs%20Mountain%20Resort!5e0!3m2!1sen!2sus!4v1743959616083!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3055.349264639708!2d-79.30027812361283!3d40.02298087950967!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89cad17abd9a35e5%3A0xe64df0643e194e61!2sSeven%20Springs%20Mountain%20Resort!5e0!3m2!1sen!2sus!4v1743959616083!5m2!1sen!2sus"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </section>
     </div>
     <footer class="bg-light text-center text-lg-start mt-auto border-top">
       <div class="container p-4">
-          <div class="row">
-              <!-- Column 1: Restaurant Name -->
-              <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">The Greenery</h5>
-                  <p>
-                      Deliciously compassionate food. Locally sourced, thoughtfully prepared right here in Vegville.
-                  </p>
-                  <a href="#rewards-section" class="btn btn-sm btn-success">Join Our Rewards!</a> <!-- Link to homepage section -->
-              </div>
-
-              <!-- Column 2: Quick Links -->
-              <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Quick Links</h5>
-                  <ul class="list-unstyled mb-0">
-                      <li><a href="menu.html" class="text-dark">Menu</a></li>
-                      <li><a href="order.html" class="text-dark">Order Online</a></li>
-                      <li><a href="process.html" class="text-dark">Our Impact</a></li>
-                      <li><a href="contact.html" class="text-dark">Contact Us</a></li>
-                  </ul>
-              </div>
-
-              <!-- === NEW Column 3: Order Delivery === -->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Order Delivery</h5>
-                  <p class="small">Get your favorites delivered:</p>
-                   <!-- Replace # with actual partner links -->
-                  <div class="mb-2">
-                    <i class="bi bi-truck me-1"></i> 
-                      <a href="order.html" target="_blank" rel="noopener noreferrer" class="text-dark me-2">
-                         DoorDash
-                      </a>
-                  </div>
-                   <div class="mb-2">
-                    <i class="bi bi-bag-check-fill me-1"></i> 
-                      <a href="order.html" target="_blank" rel="noopener noreferrer" class="text-dark me-2">
-                         Uber Eats
-                       </a>
-                   </div>
-                  <div>
-                    <i class="bi bi-box-seam me-1"></i> 
-                      <a href="order.html" target="_blank" rel="noopener noreferrer" class="text-dark me-2">
-                         Grubhub
-                      </a>
-                  </div>
-              </div>
-
-              <!-- Column 4: Follow Us -->
-              <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
-                  <h5 class="text-uppercase">Follow Us</h5>
-                  <!-- Replace # with actual social links -->
-                  <a href="#" class="text-dark me-2" title="Facebook"><i class="bi bi-facebook fs-4"></i></a>
-                  <a href="#" class="text-dark me-2" title="Instagram"><i class="bi bi-instagram fs-4"></i></a>
-                  <a href="#" class="text-dark" title="Twitter/X"><i class="bi bi-twitter-x fs-4"></i></a>
-              </div>
+        <div class="row">
+          <!-- Column 1: Restaurant Name -->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">The Greenery</h5>
+            <p>
+              Deliciously compassionate food. Locally sourced, thoughtfully
+              prepared right here in Vegville.
+            </p>
+            <a href="#rewards-section" class="btn btn-sm btn-success"
+              >Join Our Rewards!</a
+            >
+            <!-- Link to homepage section -->
           </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Quick Links</h5>
+            <ul class="list-unstyled mb-0">
+              <li><a href="menu.html" class="text-dark">Menu</a></li>
+              <li><a href="order.html" class="text-dark">Order Online</a></li>
+              <li><a href="process.html" class="text-dark">Our Impact</a></li>
+              <li><a href="contact.html" class="text-dark">Contact Us</a></li>
+            </ul>
+          </div>
+
+          <!-- === NEW Column 3: Order Delivery === -->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Order Delivery</h5>
+            <p class="small">Get your favorites delivered:</p>
+            <!-- Replace # with actual partner links -->
+            <div class="mb-2">
+              <i class="bi bi-truck me-1"></i>
+              <a
+                href="order.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-dark me-2"
+              >
+                DoorDash
+              </a>
+            </div>
+            <div class="mb-2">
+              <i class="bi bi-bag-check-fill me-1"></i>
+              <a
+                href="order.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-dark me-2"
+              >
+                Uber Eats
+              </a>
+            </div>
+            <div>
+              <i class="bi bi-box-seam me-1"></i>
+              <a
+                href="order.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-dark me-2"
+              >
+                Grubhub
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 4: Follow Us -->
+          <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+            <h5 class="text-uppercase">Follow Us</h5>
+            <!-- Replace # with actual social links -->
+            <a href="#" class="text-dark me-2" title="Facebook"
+              ><i class="bi bi-facebook fs-4"></i
+            ></a>
+            <a href="#" class="text-dark me-2" title="Instagram"
+              ><i class="bi bi-instagram fs-4"></i
+            ></a>
+            <a href="#" class="text-dark" title="Twitter/X"
+              ><i class="bi bi-twitter-x fs-4"></i
+            ></a>
+          </div>
+        </div>
       </div>
-      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
-          © 2025 The Greenery -
-          <a class="text-dark" href="sources.html">References</a>
+      <div
+        class="text-center p-3"
+        style="background-color: rgba(0, 0, 0, 0.05)"
+      >
+        © 2025 The Greenery -
+        <a class="text-dark" href="sources.html">References</a>
       </div>
-  </footer>
+    </footer>
+    <div
+      class="chat-bubble position-fixed bottom-0 end-0 mb-3 me-3 shadow rounded-circle bg-success text-white d-flex align-items-center justify-content-center"
+      id="chatToggle"
+      style="width: 60px; height: 60px; cursor: pointer; z-index: 1050"
+    >
+      <i class="bi bi-chat-dots-fill fs-3"></i>
+    </div>
+
+    <!-- Chat Window (Initially Hidden) -->
+    <div
+      class="chat-window position-fixed bottom-1 end-0 mb-3 me-3 shadow-lg bg-light rounded border"
+      id="chatWindow"
+      style="
+        width: 350px;
+        height: 450px;
+        display: none;
+        z-index: 1049;
+        flex-direction: column;
+      "
+    >
+      <!-- Header -->
+      <div
+        class="chat-header bg-success text-white p-2 d-flex justify-content-between align-items-center rounded-top"
+      >
+        <span class="fw-semibold">The Greenery Helper</span>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          id="closeChat"
+          aria-label="Close"
+        ></button>
+      </div>
+
+      <!-- Messages Area -->
+      <div class="chat-messages p-3 flex-grow-1" style="overflow-y: auto">
+        <div class="chat-message bot mb-2">
+          <span class="p-2 rounded bg-white d-inline-block shadow-sm"
+            >Hi there! I'm The Greenery AI Assistant. Ask me anything about the
+            restaurant!</span
+          >
+        </div>
+        <!-- More messages will be added here by JS -->
+      </div>
+
+      <!-- Input Area -->
+      <div class="chat-input p-2 border-top">
+        <!-- Optional: Quick Replies -->
+        <button
+          class="btn btn-sm btn-outline-success me-1 mb-1 quick-reply-ai"
+          data-question="What are your hours?"
+        >
+          Hours?
+        </button>
+        <button
+          class="btn btn-sm btn-outline-success me-1 mb-1 quick-reply-ai"
+          data-question="Where are you located?"
+        >
+          Location?
+        </button>
+        <button
+          class="btn btn-sm btn-outline-success me-1 mb-1 quick-reply-ai"
+          data-question="Can I see the menu?"
+        >
+          Menu?
+        </button>
+        <!-- Text Input -->
+        <div class="input-group mt-1">
+          <input
+            type="text"
+            class="form-control form-control-sm"
+            placeholder="Ask something..."
+            id="chatTextInput"
+            aria-label="Chat message input"
+          />
+          <button
+            class="btn btn-success btn-sm"
+            type="button"
+            id="sendChatMsg"
+            title="Send Message"
+          >
+            <i class="bi bi-send-fill"></i>
+          </button>
+        </div>
+      </div>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
+    <script src="script.js"></script>
   </body>
 </html>

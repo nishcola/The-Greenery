@@ -228,4 +228,279 @@ document.addEventListener("DOMContentLoaded", function () {
   tooltipTriggerList.map(function (tooltipTriggerEl) {
     return new bootstrap.Tooltip(tooltipTriggerEl);
   });
+
+  // --- Configuration ---
+  // !! SECURITY WARNING !! DO NOT COMMIT YOUR REAL KEY HERE IN A PUBLIC REPO
+  // !! Consider using environment variables or a backend in a real application.
+  // !! For competition demo ONLY, and DELETE key afterwards.
+  const GEMINI_API_KEY = "AIzaSyA9QcO2rvKgppxFHgmjAKu0ixdCVPbAqhE"; // <--- PASTE YOUR KEY HERE
+  // Find the correct endpoint for the model you want to use (e.g., gemini-pro)
+  // Check Google AI documentation for the latest generative models endpoint.
+  const GEMINI_API_ENDPOINT = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
+  // --- End Configuration ---
+
+  const chatToggle = document.getElementById("chatToggle");
+  const chatWindow = document.getElementById("chatWindow");
+  const closeChat = document.getElementById("closeChat");
+  const messagesArea = chatWindow
+    ? chatWindow.querySelector(".chat-messages")
+    : null;
+  const chatTextInput = document.getElementById("chatTextInput");
+  const sendChatMsg = document.getElementById("sendChatMsg");
+  const quickReplyAiButtons = chatWindow
+    ? chatWindow.querySelectorAll(".quick-reply-ai")
+    : null;
+
+  // Simple message history (Kept short for frontend demo)
+  // In a real app, manage this carefully to avoid exceeding token limits
+  let conversationHistory = [
+    // Initial prompt to guide the AI
+    {
+      role: "user",
+      parts: [
+        {
+          text: "You are a friendly and helpful customer service chatbot for 'The Greenery', a vegan restaurant. Be concise. Answer questions about the menu (menu.html), Restaurant hours (M-F 11a-9p, Sa 10a-10p, Su 10a-8p), location (123 Plantain Place, Vegville), reservations (call for 4+), allergies (vegan kitchen, but handles nuts/soy/gluten, check menu/ask staff), catering (contact via contact.html), sustainability efforts (local sourcing, composting, eco-packaging - process.html), and the rewards program (earn points, sign up via contact page). If asked something unrelated, politely state you can only help with restaurant information. When someone asks what YOU think, answer about the restaurant: for example, when someone says 'what are your hours', you respond with M-F 11a-9p, Sa 10a-10p, Su 10a-8p. Respond to everything within the context of the restaurant: ex if someone asks 'best menu items', use the items in OUR menu to answer and give a suggestion. The menu items are crispy spring rolls, avocado toast bites, hummus platter, buddha bowl, beyond burger deluxe, lentil shepherd's pie, spicy peanut noodles, burger and fries combo, buddha bowl and spring rolls combo, chocolate avocado mousse, cashew berry cheesecake, warm apple crumble, orange juice, green vitality smoothie, local kombucha, organic fair-trade coffee, and herbal tea",
+        },
+      ],
+    },
+    {
+      role: "model", // Start with a response from the "model" to set the context
+      parts: [
+        { text: "Understood. I am the The Greenery chatbot, ready to help!" },
+      ],
+    },
+    // Note: We will *not* actually send this ^ initial model response in the API call below,
+    // it's just to help structure the *next* user message correctly if we were tracking history.
+    // For simplicity here, we'll often just send the latest user query.
+  ];
+
+  // Function to add a message to the chat UI
+  function addChatMessage(message, sender = "bot") {
+    if (!messagesArea) return;
+    const messageDiv = document.createElement("div");
+    messageDiv.className = `chat-message ${sender} mb-2`;
+    const messageSpan = document.createElement("span");
+    messageSpan.className = "p-2 rounded d-inline-block shadow-sm";
+    messageSpan.innerHTML = message; // Use innerHTML to allow potential links if formatted by AI
+    messageDiv.appendChild(messageSpan);
+    messagesArea.appendChild(messageDiv);
+    // Scroll to the bottom
+    messagesArea.scrollTop = messagesArea.scrollHeight;
+  }
+
+  // Function to show a "typing" indicator
+  function showTypingIndicator() {
+    addChatMessage(
+      '<div class="spinner-grow spinner-grow-sm" role="status"><span class="visually-hidden">Loading...</span></div> Thinking...',
+      "bot"
+    );
+  }
+
+  // Function to remove the "typing" indicator (removes the last bot message)
+  function removeTypingIndicator() {
+    const lastBotMessage = messagesArea.querySelector(
+      ".chat-message.bot:last-child"
+    );
+    if (lastBotMessage && lastBotMessage.querySelector(".spinner-grow")) {
+      lastBotMessage.remove();
+    }
+  }
+
+  // --- Function to call Gemini API ---
+  async function getGeminiResponse(prompt) {
+    // !!! IMPORTANT FIX: Include the system prompt + current user prompt in the contents !!!
+    const requestBody = {
+      // Construct the 'contents' array for the API call
+      contents: [
+        // Part 1: The System Instruction/Context (Always include this!)
+        conversationHistory[0], // Contains the "You are a chatbot..." instructions
+
+        // Part 2: The CURRENT user's actual question/prompt
+        {
+          role: "user",
+          parts: [{ text: prompt }], // The 'prompt' variable (current user message)
+        },
+        // Note: We are NOT sending the full conversationHistory dynamically here
+        // to keep it simple and avoid complexity with token limits for this demo.
+        // We just prepend the static system instructions to the current user query.
+      ],
+      // Optional: Configure safety settings, temperature etc. (Keep as is)
+      generationConfig: {
+        temperature: 0.7,
+        topK: 1,
+        topP: 1,
+        maxOutputTokens: 256,
+      },
+      safetySettings: [
+        // Keep safety settings
+        {
+          category: "HARM_CATEGORY_HARASSMENT",
+          threshold: "BLOCK_MEDIUM_AND_ABOVE",
+        },
+        {
+          category: "HARM_CATEGORY_HATE_SPEECH",
+          threshold: "BLOCK_MEDIUM_AND_ABOVE",
+        },
+        {
+          category: "HARM_CATEGORY_SEXUALLY_EXPLICIT",
+          threshold: "BLOCK_MEDIUM_AND_ABOVE",
+        },
+        {
+          category: "HARM_CATEGORY_DANGEROUS_CONTENT",
+          threshold: "BLOCK_MEDIUM_AND_ABOVE",
+        },
+      ],
+    };
+
+    // ---- Logging for Debugging (Optional) ----
+    // console.log("Sending to Gemini:", JSON.stringify(requestBody, null, 2));
+    // ---- End Logging ----
+
+    try {
+      const response = await fetch(GEMINI_API_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        console.error(
+          "Gemini API Error:",
+          response.status,
+          response.statusText,
+          errorData
+        );
+        // Try to get specific error message from Gemini if available
+        const errorMessage =
+          errorData?.error?.message ||
+          `API Error: ${response.status} ${response.statusText}`;
+        throw new Error(errorMessage);
+      }
+
+      const data = await response.json();
+
+      // ---- Logging for Debugging (Optional) ----
+      // console.log("Received from Gemini:", JSON.stringify(data, null, 2));
+      // ---- End Logging ----
+
+      // Extract the text response - **VERIFY this path is correct for your model**
+      if (
+        data.candidates &&
+        data.candidates[0] &&
+        data.candidates[0].content &&
+        data.candidates[0].content.parts &&
+        data.candidates[0].content.parts[0]
+      ) {
+        const botText = data.candidates[0].content.parts[0].text;
+        // Basic sanitization
+        const sanitizedText = botText.replace(/</g, "<").replace(/>/g, ">");
+        // Improve link formatting potentially (very basic example)
+        const finalText = sanitizedText
+          .replace(
+            /menu\.html/g,
+            '<a href="menu.html" target="_blank">menu</a>'
+          )
+          .replace(
+            /contact\.html/g,
+            '<a href="contact.html" target="_blank">contact page</a>'
+          )
+          .replace(
+            /sustainability\.html/g,
+            '<a href="sustainability.html" target="_blank">sustainability page</a>'
+          );
+
+        // We are NOT dynamically adding to conversationHistory in this simplified demo
+        return finalText;
+      } else if (
+        data.candidates &&
+        data.candidates[0]?.finishReason &&
+        data.candidates[0].finishReason !== "STOP"
+      ) {
+        // Handle cases where generation stopped due to safety or other reasons
+        console.warn(
+          "Gemini generation stopped. Reason:",
+          data.candidates[0].finishReason
+        );
+        return `Sorry, I couldn't generate a full response. Reason: ${data.candidates[0].finishReason}. Please try rephrasing.`;
+      } else {
+        console.error("Unexpected API response structure:", data);
+        return "Sorry, I received an unexpected response structure. Please check the console.";
+      }
+    } catch (error) {
+      console.error("Error fetching Gemini response:", error);
+      // Display the specific error message caught
+      return `Sorry, I encountered an error: ${error.message}. Please try again later.`;
+    }
+  }
+
+  // --- Function to handle sending a message ---
+  async function handleSendMessage(messageText) {
+    if (!messageText || !messagesArea) return;
+
+    addChatMessage(messageText, "user"); // Display user message immediately
+    if (chatTextInput) chatTextInput.value = ""; // Clear input field
+    showTypingIndicator();
+
+    const botResponse = await getGeminiResponse(messageText);
+
+    removeTypingIndicator();
+    addChatMessage(botResponse, "bot");
+  }
+
+  // --- Event Listeners ---
+  if (chatToggle && chatWindow && closeChat) {
+    // Toggle chat window visibility WHEN BUBBLE IS CLICKED
+    chatToggle.addEventListener("click", () => {
+      // console.log("Chat toggle clicked!"); // Optional: for debugging
+      chatWindow.classList.add("active"); // Show window using the 'active' class
+
+      // === HIDE THE BUBBLE ===
+      // =======================
+
+      // console.log("Chat window opened. Bubble hidden."); // Optional: for debugging
+    });
+
+    // Close chat window WHEN 'X' IS CLICKED
+    closeChat.addEventListener("click", () => {
+      // console.log("Close chat clicked!"); // Optional: for debugging
+      chatWindow.classList.remove("active"); // Hide window by removing 'active' class
+
+      // === SHOW THE BUBBLE AGAIN ===
+      // Use 'flex' because the original CSS uses display:flex to center the icon
+      // =============================
+
+      // console.log("Chat window closed. Bubble shown."); // Optional: for debugging
+    });
+
+    // Handle Send button click (Keep as is)
+    if (sendChatMsg) {
+      sendChatMsg.addEventListener("click", () => {
+        handleSendMessage(chatTextInput.value.trim());
+      });
+    }
+
+    // Handle Enter key press in input field (Keep as is)
+    if (chatTextInput) {
+      chatTextInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          e.preventDefault(); // Prevent form submission if it's inside one
+          handleSendMessage(chatTextInput.value.trim());
+        }
+      });
+    }
+
+    // Handle NEW quick reply buttons (Keep as is)
+    if (quickReplyAiButtons) {
+      quickReplyAiButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const question = button.getAttribute("data-question");
+          handleSendMessage(question); // Send the predefined question
+        });
+      });
+    }
+  }
+  // --- END: Gemini Chatbot Logic ---
 }); // End DOMContentLoaded
