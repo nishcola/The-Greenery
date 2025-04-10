@@ -755,6 +755,22 @@
         <a class="text-dark" href="sources.html">References</a>
       </div>
     </footer>
+    <div class="toast-container position-fixed bottom-0 start-0 p-3" style="z-index: 1100;"> <!-- Ensure z-index is high -->
+
+      <!-- The Toast itself -->
+      <div id="chatbotInfoToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+          <div class="toast-header">
+              <i class="bi bi-chat-right-text-fill me-2 text-success"></i> <!-- Icon -->
+              <strong class="me-auto">AI Assistant Available!</strong>
+              <!-- <small>Just now</small> --> <!-- Optional timestamp -->
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+              Have questions? Click the chat bubble <i class="bi bi-chat-dots-fill"></i> on the right to ask our AI assistant about hours, menu, location & more!
+          </div>
+      </div>
+
+  </div>
     <div
       class="chat-bubble position-fixed bottom-0 end-0 mb-3 me-3 shadow rounded-circle bg-success text-white d-flex align-items-center justify-content-center"
       id="chatToggle"

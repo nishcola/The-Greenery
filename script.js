@@ -4,6 +4,21 @@ document.addEventListener("DOMContentLoaded", function () {
     duration: 800, // values from 0 to 3000, with step 50ms
     once: true, // whether animation should happen only once - while scrolling down
   });
+
+  const infoToastElement = document.getElementById('chatbotInfoToast');
+  if (infoToastElement) {
+    const chatbotToast = new bootstrap.Toast(infoToastElement, {
+        // Options:
+        // autohide: false, // Uncomment this line if you want it to stay until manually closed
+        delay: 15000 // Auto-hide after 15 seconds (default is 5000ms)
+    });
+
+    // Show the toast shortly after the page loads
+    setTimeout(() => {
+        chatbotToast.show();
+    }, 1500); // Show after 1.5 seconds (adjust timing as needed)
+}
+
   // --- Mock Order Page Logic ---
   const orderForm = document.getElementById("mockOrderForm"); // Get the form element
 
