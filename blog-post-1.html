@@ -35,28 +35,24 @@
         align-items: center;
         justify-content: center;
         cursor: pointer;
-        /* Use a lower, but still high z-index */
-        z-index: 1040; /* LOWER z-index */
+        z-index: 1040;
         transition: transform 0.2s ease-in-out;
       }
       .chat-bubble:hover {
         transform: scale(1.1);
       }
 
-      /* Make the active selector slightly more specific using 'body' */
       body .chat-window {
-        /* Added body selector */
         position: fixed;
         right: 1rem;
-        bottom: 1rem; /* Default bottom */
+        bottom: 1rem;
         width: 350px;
         height: 450px;
         background-color: #f8f9fa;
         border: 1px solid #dee2e6;
         border-radius: 0.375rem;
         box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
-        /* Use a significantly higher z-index */
-        z-index: 1060; /* HIGHER z-index */
+        z-index: 1060;
         display: none;
         flex-direction: column;
         transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out,
@@ -65,29 +61,23 @@
         transform: translateY(20px);
       }
 
-      /* This class is ADDED by JS to show the window */
       body .chat-window.active {
-        /* Added body selector */
-        display: flex !important; /* Keep !important here for good measure if needed */
+        display: flex !important;
         opacity: 1;
         transform: translateY(0);
-        /* === INCREASED GAP in calculation === */
-        /* Make the gap larger (e.g., 1rem instead of 0.5rem) */
-        bottom: calc(1rem + 60px + 1rem); /* Increased gap */
-        /* =================================== */
+        bottom: calc(1rem + 60px + 1rem);
       }
 
       .chat-header {
-        /* Styles for header (bg-success, text-white etc handled by Bootstrap classes) */
-        padding: 0.5rem 1rem; /* Adjust padding if needed */
+        padding: 0.5rem 1rem;
         border-top-left-radius: 0.375rem;
         border-top-right-radius: 0.375rem;
       }
 
       .chat-messages {
         padding: 1rem;
-        flex-grow: 1; /* Take up available vertical space */
-        overflow-y: auto; /* Allow scrolling for messages */
+        flex-grow: 1;
+        overflow-y: auto;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
@@ -97,8 +87,8 @@
         background-color: #e9ecef;
         border-radius: 15px 15px 15px 0;
         max-width: 85%;
-        padding: 0.5rem 0.75rem; /* Added padding */
-        display: inline-block; /* Needed for max-width */
+        padding: 0.5rem 0.75rem;
+        display: inline-block;
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
       }
 
@@ -228,7 +218,6 @@
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase">Order Delivery</h5>
             <p class="small">Get your favorites delivered:</p>
-            <!-- Replace # with actual partner links -->
             <div class="mb-2">
               <i class="bi bi-truck me-1"></i>
               <a
@@ -267,7 +256,6 @@
           <!-- Column 4: Follow Us -->
           <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
             <h5 class="text-uppercase">Follow Us</h5>
-            <!-- Replace # with actual social links -->
             <a href="#" class="text-dark me-2" title="Facebook"
               ><i class="bi bi-facebook fs-4"></i
             ></a>
@@ -334,7 +322,7 @@
 
       <!-- Input Area -->
       <div class="chat-input p-2 border-top">
-        <!-- Optional: Quick Replies -->
+        <!-- Quick Replies -->
         <button
           class="btn btn-sm btn-outline-success me-1 mb-1 quick-reply-ai"
           data-question="What are your hours?"
